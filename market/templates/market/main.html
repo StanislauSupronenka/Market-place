@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Home{% endblock %}</title>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Username</h2>
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i>Graphs</a></li>
+            <li><a href="#"><i class="fas fa-table"></i>Tables</a></li>
+            <li><a href="/deal"><i class="fas fa-book-open"></i>My deals</a></li>
+            <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+            <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
+        </ul>
+    </div>
+    <div class="main_content">
+        <div class="header">{% block header %}Home{% endblock %}</div>
+        <div >
+            <div>{% block content %}{% endblock %}
+
+            </div>
+        </div>
+    </div>
+</div>>
+
+</body>
+</html>
