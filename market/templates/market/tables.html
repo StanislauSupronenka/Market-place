@@ -1,0 +1,32 @@
+{% extends "market/main.html" %}
+
+
+{% block title %}CurrencyTable{% endblock %}
+{% block header %}Currencies{% endblock %}
+
+
+{% block content %}
+
+
+
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            {% for code in datatable %}
+            <th>{{code.currency_code}}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for price in datatable %}
+            <td>{{price.currency}}</td>
+            {% endfor %}
+        </tr>
+
+        <tbody>
+    </table>
+</div>
+{% endblock%}

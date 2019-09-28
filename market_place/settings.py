@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'market',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'market_place.wsgi.application'
+ASGI_APPLICATION = 'market_place.routing.application'
 
 
 # Database
@@ -78,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'market_place',
-        'USER' : 'admin',
-        'PASSWORD' : 'uberyzate',
-        'HOST' : '127.0.0.1',
-        'PORT' : '5432',
+        'USER': 'admin',
+        'PASSWORD': 'uberyzate',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -124,3 +126,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("localhost", 6379)],
+        },
+    },
+}

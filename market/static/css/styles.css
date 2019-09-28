@@ -6,6 +6,15 @@
 
 
 }
+.logo {
+    width: 200px;
+    height:100px;
+    margin-left:50px;
+}
+.logo img {
+    width: 150px;
+    height: auto;
+}
 
 body{
    background-color: #40546b;
@@ -40,6 +49,16 @@ body{
   border-bottom: 1px solid #adadad;
 
 }
+.exit a{
+    float: right;
+    color: #5f6f81;
+    margin-bottom: 2px;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 20px;
+}
+.exit .fas{
+ width: 25px;
+}
 
 .wrapper .sidebar ul li a{
   color: #5f6f81;
@@ -54,7 +73,7 @@ body{
   background-color: #747d8a;
 }
 
-.wrapper .sidebar ul li:hover a{
+.wrapper .sidebar  ul li:hover a{
   color:white;
 }
 
@@ -89,4 +108,20 @@ body{
   background: #fff;
   color: #717171;
   border-bottom: 1px solid #e0e4e8;
+}
+.Chart {
+width:500px;
+background-color: white;
+height: auto;
+margin: 20px;
+
+}
+.content_name
+{
+padding: 30px;
+height: 300px;
+font-size: 120px;
+font-family: Comic Sans MS;
+font-weight: 200;
+color: white;
 }

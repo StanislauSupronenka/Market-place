@@ -1,0 +1,31 @@
+{% extends "market/main.html" %}
+
+{% block title %}Charts{% endblock %}
+{% block header %}Charts{% endblock %}
+
+
+{% block content %}
+<div class = "Chart">
+<canvas id="densityChart" width="600" height="400"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script>
+
+var densityCanvas = document.getElementById('densityChart');
+var densityData = {
+  label: 'My deals stat',
+  data: [{% for cur in data %} {{ cur.currency }}, {% endfor %}],
+  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+};
+
+var barChart = new Chart(densityCanvas, {
+  type: 'bar',
+
+  data: {
+    labels: [{% for code in data %} '{{ code.currency_code }}', {% endfor %}],
+    datasets: [densityData],
+  }
+});
+</script>
+</div>
+{% endblock %}

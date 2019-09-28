@@ -8,27 +8,39 @@
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
 </head>
 <body>
 
 <div class="wrapper">
     <div class="sidebar">
-        <h2>Username</h2>
+        <div class = "logo">
+            <a  href="/home"><img src="{% static 'img/logo.png' %}">
+            </a>
+        </div>
+
         <ul>
-            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="/home"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="#"><i class="fas fa-cogs"></i>Settings</a></li>
-            <li><a href="#"><i class="fas fa-chart-line"></i>Graphs</a></li>
-            <li><a href="#"><i class="fas fa-table"></i>Tables</a></li>
+            <li><a href="/chart"><i class="fas fa-chart-line"></i>Graphs</a></li>
+            <li><a href="/table"><i class="fas fa-table"></i>Tables</a></li>
             <li><a href="/deal"><i class="fas fa-book-open"></i>My deals</a></li>
             <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
             <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
         </ul>
     </div>
     <div class="main_content">
-        <div class="header">{% block header %}Home{% endblock %}</div>
+        <div class="header">
+          <div class="exit">
+          <a href="/"><i class="fas fa-door-open"></i>Logout</a>
+          </div>
+        </div>
+        <div class = "content_name">
+            {% block header %}<p>Home</p>{% endblock %}
+        </div>
         <div >
-            <div>{% block content %}{% endblock %}
-
+            <div>{% block content %}
+                {% endblock %}
             </div>
         </div>
     </div>
