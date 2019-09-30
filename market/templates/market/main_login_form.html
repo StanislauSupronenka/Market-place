@@ -1,0 +1,25 @@
+{% load static %}
+
+<html>
+<head>
+<title>{% block title %}Login{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+<body>
+    <div class="loginbox">
+    <img src="{% static 'img/avatar.png' %}" class="avatar">
+        <h1>{% block header %}Login Here {% endblock %}</h1>
+        <form>
+            {% block content%}
+            <p>Username</p>
+            <input type="text" name="" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="" placeholder="Enter Password">
+            <input type="submit" name="" value="Login">
+            {% endblock %}
+        </form>
+
+    </div>
+
+</body>
+</head>
+</html>

@@ -7,7 +7,7 @@ from django.core.signing import Signer
 class Users(AbstractUser):
     signer = Signer()
 
-    tel_number = models.CharField(max_length=20)
+    phone_number = models.CharField(max_length=20)
     email_verification_link = models.CharField(
         null=True,
         max_length=1024
